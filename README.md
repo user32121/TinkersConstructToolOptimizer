@@ -4,7 +4,6 @@ website at https://user32121.github.io/TinkersConstructToolOptimizer/
 
 
 ### TODO
-main page layout  
 page automation to reduce workload (script that generates radio buttons etc)  
 tool selection  
 material availability list  
