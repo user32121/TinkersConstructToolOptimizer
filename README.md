@@ -1,5 +1,6 @@
 ## Tinkers Construct Tool Optimizer
-
+A small project for finding the optimal tool configuration for tinkers construct.  
+Note that this is designed for 1.12.2  
 website at https://user32121.github.io/TinkersConstructToolOptimizer/
 
 
