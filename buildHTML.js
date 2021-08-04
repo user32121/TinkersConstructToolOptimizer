@@ -1,6 +1,6 @@
 const items = {
     tools: ["Pickaxe", "Shovel", "Hatchet", "Mattock", "Kama", "Scythe", "Hammer", "Excavator", "Lumberaxe", "Broadsword", "Longsword", "Rapier", "Battlesign", "Frypan", "Cleaver", "Arrow", "Shortbow", "Longbow", "Bolt", "Crossbow", "Shuriken"],
-	materials: ["Naga Scale", "Steeleaf", "Fiery Ingot", "Knightly Metal", "Wood", "Stone", "Flint", "Cactus", "Bone", "Obsidian", "Prismarine", "End Stone", "Paper", "Sponge", "Firewood", "Iron", "Pig Iron", "Knightslime", "Slime", "Blue Slime", "Magma Slime", "Netherrack", "Cobalt", "Ardite", "Manyullyn", "Magical Wood", "Evil Infused Iron", "Enchanted Metal", "Demonic Metal"]
+	materials: ["Naga Scale", "Steeleaf", "Fiery Ingot", "Knightmetal", "Wood", "Stone", "Flint", "Cactus", "Bone", "Obsidian", "Prismarine", "End Stone", "Paper", "Sponge", "Firewood", "Iron", "Pig Iron", "Knightslime", "Slime", "Blue Slime", "Magma Slime", "Netherrack", "Cobalt", "Ardite", "Manyullyn", "Magical Wood", "Evil Infused Iron", "Enchanted Metal", "Demonic Metal"]
 }
 
 //tools
@@ -8,7 +8,7 @@ var tools = document.getElementById("tools");
 for(tool of items.tools)
 {
 	//make string html compliant
-	var tool2 = tool.toLowerCase().replace(" ", "-");
+	var tool2 = tool.toLowerCase().replaceAll(" ", "-");
 	
 	//wrapper
 	var wrapper = document.createElement("span");
@@ -27,7 +27,7 @@ for(tool of items.tools)
     
     //tool icon
     var img = document.createElement("img");
-    img.setAttribute("src", "icons/"+tool+".png");
+    img.setAttribute("src", "icons/tools/"+tool2+".png");
     img.setAttribute("title", tool);
     img.setAttribute("width", "25");
     
@@ -37,7 +37,7 @@ for(tool of items.tools)
     wrapper.appendChild(label);
     tools.appendChild(wrapper);
 }
-tools.firstElementChild.setAttribute("checked", true);
+tools.firstElementChild.firstElementChild.setAttribute("checked", true);
 
 
 //materials
@@ -45,7 +45,7 @@ var materials = document.getElementById("materials");
 for(material of items.materials)
 {
 	//make string html compliant
-	var material2 = material.toLowerCase().replace(" ", "-");
+	var material2 = material.toLowerCase().replaceAll(" ", "-");
 	
 	//wrapper
 	var wrapper = document.createElement("span");
@@ -64,7 +64,7 @@ for(material of items.materials)
     
     //material icon
     var img = document.createElement("img");
-    img.setAttribute("src", "icons/"+material+".png");
+    img.setAttribute("src", "icons/materials/"+material2+".png");
     img.setAttribute("title", material);
     img.setAttribute("width", "25");
     
