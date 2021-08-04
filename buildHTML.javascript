@@ -31,3 +31,5 @@ for(tool of items.tools)
     tools.appendChild(label);
     tools.appendChild(space);
 }
+
+tools.firstElementChild.setAttribute("selected", true);
