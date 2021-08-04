@@ -28,4 +28,4 @@ for(tool of items.tools)
     tools.appendChild(label);
 }
 
-tools.firstElementChild.setAttribute("selected", true);
+tools.firstElementChild.setAttribute("checked", true);
