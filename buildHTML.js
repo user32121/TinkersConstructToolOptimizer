@@ -75,6 +75,6 @@ for(material of items.materials)
     materials.appendChild(wrapper);
 }
 
-
+ 
  
 //modifiers
