@@ -16,7 +16,7 @@ for(tool in items.tools)
     
     //tool icon
     var img = document.createElement("img");
-    img.setAttribute("src", "icons/"+tool"+".png");
+    img.setAttribute("src", "icons/"+tool+".png");
     img.setAttribute("title", tool);
     img.setAttribute("width", "25");
     
