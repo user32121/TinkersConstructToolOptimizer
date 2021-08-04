@@ -20,10 +20,19 @@
 			<span id="modifiers">
             </span><br><br>
 			
-            <p>Optimize: Durability</p>
-            <p>Advanced v</p>
-            <p style="color: #00ff00;">Optimize</p>
+            <label for="optimization-target">Optimize: </label>
+			<select name="optimization-target" id="optimization-target">
+				<option value="durability">Durability</option>
+				<option value="mining-speed">Mining Speed</option>
+				<option value="attack-speed">Attack Speed</option>
+				<option value="attack-damage">Attack Damage</option>
+			</select>
+            
+			<p><strike>Advanced v</strike></p>
+            <button onclick="Optimize()">Optimize</button>
         </div>
+        <script src="info.js"></script>
         <script src="buildHTML.js"></script>
+        <script src="optimize.js"></script>
     </body>
 </html>
