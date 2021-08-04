@@ -22,14 +22,10 @@ for(tool of items.tools)
     img.setAttribute("title", tool);
     img.setAttribute("width", "25");
     
-    //extra space
-    var space = document.createElement("&nbsp;");
-    
     //add to tools
     label.appendChild(img);
     tools.appendChild(input);
     tools.appendChild(label);
-    tools.appendChild(space);
 }
 
 tools.firstElementChild.setAttribute("selected", true);
