@@ -1,4 +1,6 @@
-const items = require("consts.json");
+const items = {
+    tools = ["Pickaxe", "Shovel", "Hatchet", "Mattock", "Kama", "Scythe", "Hammer", "Excavator", "Lumberaxe", "Broadsword", "Longsword", "Rapier", "Battlesign", "Frypan", "Cleaver", "Arrow", "Shortbow", "Longbow", "Bolt", "Crossbow", "Shuriken"]
+}
 
 var tools = document.getElementById("tools");
 for(tool in items.tools)
