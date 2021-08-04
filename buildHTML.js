@@ -37,7 +37,7 @@ for(tool of items.tools)
     wrapper.appendChild(label);
     tools.appendChild(wrapper);
 }
-tools.firstElementChild.setAttribute("checked", true);
+tools.firstElementChild.firstElementChild.setAttribute("checked", true);
 
 
 //materials
