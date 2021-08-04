@@ -1,3 +1,5 @@
-#tools > label {
+/* for keeping icons grouped with their radio buttons */
+span.wrapper {
+  display: inline-block;
   margin-right: 10px;
 }
