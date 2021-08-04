@@ -23,7 +23,7 @@ for(tool of items.tools)
     img.setAttribute("width", "25");
     
     //extra space
-    var space = document.createTextNode("&nbsp;");
+    var space = document.createElement("&nbsp;");
     
     //add to tools
     label.appendChild(img);
