@@ -3,7 +3,7 @@ const items = {
 }
 
 var tools = document.getElementById("tools");
-for(tool in items.tools)
+for(tool of items.tools)
 {
     //radio button
     var input = document.createElement("input");
