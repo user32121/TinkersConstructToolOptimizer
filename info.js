@@ -160,7 +160,7 @@ info = {
 			],
 			modifiers: {
 				"attack damage": [["*", 1.3], ["+", 3]],
-				durability: [["*", 3]]
+				durability: [["*", 2]]
 			}
 		},
 		{
