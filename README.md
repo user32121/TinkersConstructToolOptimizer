@@ -11,5 +11,6 @@ optimization selection
 -dps  
 -toggle all materials  
 -asynchronous calculation / progress bar  
+-fix floating point rounding errors on display  
   
 advanced: material-tool matrix (for when a user wants a certain material for a certain part)  
