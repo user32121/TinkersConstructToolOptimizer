@@ -6,9 +6,9 @@ website at https://user32121.github.io/TinkersConstructToolOptimizer/
 
 ### TODO
 optimization selection  
--mining speed
 -attack damage  
 -attack speed  
 -dps  
+-toggle all materials  
   
 advanced: material-tool matrix (for when a user wants a certain material for a certain part)  
