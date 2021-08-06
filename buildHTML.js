@@ -57,6 +57,7 @@ for(material of info.materials)
 	input.setAttribute("name", "material");
 	input.setAttribute("id", material2);
 	input.setAttribute("value", material2);
+	input.setAttribute("onclick", "materialsCheckOnClick()");
 	input.setAttribute("checked", true);
 	
 	//label
@@ -77,5 +78,36 @@ for(material of info.materials)
 }
 
  
- 
 //modifiers
+
+
+
+//material master checkbox
+function materialsCheckOnClick()
+{
+	//calculate to see if all materials are checked
+	let total = document.querySelectorAll("input[name='material']");
+	let checked = document.querySelectorAll("input[name='material']:checked");
+	let checkAll = document.querySelector("input#all-materials");
+	if(checked.length == total.length)
+	{
+		checkAll.checked = true;
+		checkAll.indeterminate = false;
+	}
+	else if(checked.length == 0)
+	{
+		checkAll.checked = false;
+		checkAll.indeterminate = false;
+	}
+	else
+	{
+		checkAll.checked = false;
+		checkAll.indeterminate = true;
+	}
+}
+function allMaterialsCheckOnClick(allCheckBox)
+{
+	let checkboxes = document.querySelectorAll("input[name='material']");
+	for(let checkBox of checkboxes.values())
+		checkBox.checked = allCheckBox.checked;
+}
