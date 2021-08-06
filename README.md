@@ -10,5 +10,6 @@ optimization selection
 -attack speed  
 -dps  
 -toggle all materials  
+-asynchronous calculation / progress bar  
   
 advanced: material-tool matrix (for when a user wants a certain material for a certain part)  
