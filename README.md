@@ -9,7 +9,6 @@ optimization selection
 -attack damage  
 -attack speed  
 -dps  
--toggle all materials  
 -asynchronous calculation / progress bar  
 -fix floating point rounding errors on display  
   
