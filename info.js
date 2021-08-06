@@ -8,7 +8,10 @@ info = {
 				{ name: "Pickaxe Head", types: ["head"] },
 				{ name: "Binding", types: ["extra"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 1]],
+				"attack speed": [["*", 1.2]]
+			}
 		},
 		{
 			name: "Shovel",
@@ -17,7 +20,10 @@ info = {
 				{ name: "Shovel Head", types: ["head"] },
 				{ name: "Binding", types: ["extra"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 0.9]],
+				"attack speed": [["*", 1]]
+			}
 		},
 		{
 			name: "Hatchet",
@@ -27,7 +33,8 @@ info = {
 				{ name: "Binding", types: ["extra"] }
 			],
 			modifiers: {
-				"attack damage": [["+", 0.5]]
+				"attack damage": [["+", 0.5], ["*", 1.1]],
+				"attack speed": [["*", 1.1]]
 			}
 		},
 		{
@@ -38,7 +45,9 @@ info = {
 				{ name: "Shovel Head", types: ["head"] }
 			],
 			modifiers: {
-				"attack damage": [["+", 3]]
+				"attack damage": [["+", 3], ["*", 0.9]],
+				"attack speed": [["*", 0.9]],
+				"mining speed": [["*", 0.95]]
 			}
 		},
 		{
@@ -48,7 +57,10 @@ info = {
 				{ name: "Kama Head", types: ["head"] },
 				{ name: "Binding", types: ["extra"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 1]],
+				"attack speed": [["*", 1.3]]
+			}
 		},
 		{
 			name: "Scythe",
@@ -59,7 +71,9 @@ info = {
 				{ name: "Tough Tool Rod", types: ["handle"] }
 			],
 			modifiers: {
-				durability: [["*", 2.2]]
+				durability: [["*", 2.2]],
+				"attack damage": [["*", 0.75]],
+				"attack speed": [["*", 0.9]]
 			}
 		},
 		{
@@ -71,7 +85,10 @@ info = {
 				{ name: "Large Plate", types: ["head"] }
 			],
 			modifiers: {
-				durability: [["*", 2.5]]
+				durability: [["*", 2.5]],
+				"attack damage": [["*", 1.2]],
+				"attack speed": [["*", 0.8]],
+				"mining speed": [["*", 0.4]]
 			}
 		},
 		{
@@ -83,7 +100,10 @@ info = {
 				{ name: "Tough Binding", types: ["extra"] }
 			],
 			modifiers: {
-				durability: [["*", 1.75]]
+				durability: [["*", 1.75]],
+				"attack damage": [["*", 1.25]],
+				"attack speed": [["*", 0.7]],
+				"mining speed": [["*", 0.28]]
 			}
 		},
 		{
@@ -95,8 +115,10 @@ info = {
 				{ name: "Tough Binding", types: ["extra"] }
 			],
 			modifiers: {
-				"attack damage": [["+", 2]],
-				durability: [["*", 2]]
+				durability: [["*", 2]],
+				"attack damage": [["+", 2], ["*", 1.2]],
+				"attack speed": [["*", 0.8]],
+				"mining speed": [["*", 0.35]]
 			}
 		},
 		{
@@ -108,7 +130,8 @@ info = {
 			],
 			modifiers: {
 				durability: [["*", 1.1]],
-				"attack damage": [["+", 1]]
+				"attack damage": [["+", 1], ["*", 1]],
+				"attack speed": [["*", 1.6]]
 			}
 		},
 		{
@@ -120,7 +143,8 @@ info = {
 			],
 			modifiers: {
 				durability: [["*", 1.05]],
-				"attack damage": [["+", 0.5]]
+				"attack damage": [["+", 0.5], ["*", 1.1]],
+				"attack speed": [["*", 1.4]]
 			}
 		},
 		{
@@ -131,7 +155,9 @@ info = {
 				{ name: "Cross Guard", types: ["extra"] }
 			],
 			modifiers: {
-				durability: [["*", 0.8]]
+				durability: [["*", 0.8]],
+				"attack damage": [["*", 0.55]],
+				"attack speed": [["*", 3]]
 			}
 		},
 		{
@@ -140,7 +166,10 @@ info = {
 				{ name: "Tool Rod", types: ["handle"] },
 				{ name: "Sign Plate", types: ["head"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 0.86]],
+				"attack speed": [["*", 1.2]]
+			}
 		},
 		{
 			name: "Frypan",
@@ -148,7 +177,10 @@ info = {
 				{ name: "Tool Rod", types: ["handle"] },
 				{ name: "Pan", types: ["head"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 1]],
+				"attack speed": [["*", 1.4]]
+			}
 		},
 		{
 			name: "Cleaver",
@@ -159,8 +191,9 @@ info = {
 				{ name: "Tough Tool Rod", types: ["extra"] }
 			],
 			modifiers: {
-				"attack damage": [["*", 1.3], ["+", 3]],
-				durability: [["*", 2]]
+				durability: [["*", 2]],
+				"attack damage": [["*", 1.3], ["+", 3], ["*", 1.2]],
+				"attack speed": [["*", 0.7]]
 			}
 		},
 		{
@@ -171,7 +204,8 @@ info = {
 				{ name: "Fletchling", types: ["fletchling"] }
 			],
 			modifiers: {
-				"attack damage": [["+", 2]]
+				"attack damage": [["+", 2], ["*", 1]],
+				"attack speed": [["*", 1]]
 			}
 		},
 		{
@@ -181,7 +215,14 @@ info = {
 				{ name: "Bowlimb", types: ["head", "bow"] },
 				{ name: "Bowstring", types: ["bowstring"] }
 			],
-			modifiers: {}
+			modifiers: {
+				"attack damage": [["*", 0.7]],
+				"attack speed": [["*", 1.5]],
+				"projectile damage": [["*", 0.8]]
+			},
+			"projectile damage": 0,
+			"projectile speed": 3,
+			"draw time": 12
 		},
 		{
 			name: "Longbow",
@@ -192,8 +233,13 @@ info = {
 				{ name: "Bowstring", types: ["bowstring"] }
 			],
 			modifiers: {
-				durability: [["*", 1.4]]
-			}
+				durability: [["*", 1.4]],
+				"attack speed": [["*", 1.3]],
+				"projectile damage": [["*", 1.25]]
+			},
+			"projectile damage": 2.5,
+			"projectile speed": 5.5,
+			"draw time": 30
 		},
 		{
 			name: "Bolt",
@@ -203,7 +249,9 @@ info = {
 				{ name: "Fletchling", types: ["fletchling"] }
 			],
 			modifiers: {
-				durability: [["*", 0.8]]
+				durability: [["*", 0.8]],
+				"attack damage": [["*", 1]],
+				"attack speed": [["*", 1]]
 			}
 		},
 		{
@@ -215,8 +263,14 @@ info = {
 				{ name: "Bowstring", types: ["bowstring"] }
 			],
 			modifiers: {
-				"attack damage": [["*", 1.5]]
-			}
+				"attack damage": [["*", 0.8]],
+				"bonus damage": [["*", 1.5]],
+				"attack speed": [["*", 2]],
+				"projectile damage": [["*", 1.3]]
+			},
+			"projectile damage": 3,
+			"projectile speed": 7,
+			"draw time": 45
 		},
 		{
 			name: "Shuriken",
@@ -227,7 +281,7 @@ info = {
 				{ name: "Knife Blade", types: ["head", "extra"] }
 			],
 			modifiers: {
-				"attack damage": [["+", 1]],
+				"attack damage": [["+", 1], ["*", 0.7]],
 				"accuracy": [["=", 1]]
 			}
 		}
@@ -240,6 +294,17 @@ info = {
 				"mining level": 2,
 				"mining speed": 8.9,
 				"attack damage": 4.3,
+				traits: ["Twilit", "Precipitate"]
+			},
+			bow: {
+				drawspeed: 1.67,
+				"range multipler": 2,
+				"bonus damage": 0,
+				traits: ["Twilit", "Precipitate"]
+			},
+			shaft: {
+				modifier: 1.4,
+				"bonus ammo": 20,
 				traits: ["Twilit", "Precipitate"]
 			}
 		},
@@ -260,6 +325,22 @@ info = {
 			extra: {
 				durability: 90,
 				traits: ["Twilit", "Synergy"]
+			},
+			bow: {
+				drawspeed: 0.83,
+				"range multipler": 1.5,
+				"bonus damage": 2,
+				traits: ["Twilit", "Synergy"]
+			},
+			shaft: {
+				modifier: 0.6,
+				"bonus ammo": 10,
+				traits: ["Twilit", "Synergy"]
+			},
+			fletchling: {
+				modifier: 0.8,
+				"accuracy": 1,
+				traits: ["Twilit", "Synergy"]
 			}
 		},
 		{
@@ -278,6 +359,17 @@ info = {
 			},
 			extra: {
 				durability: 200,
+				traits: ["Twilit", "Flammable"]
+			},
+			bow: {
+				drawspeed: 1,
+				"range multipler": 0.9,
+				"bonus damage": 4,
+				traits: ["Twilit", "Flammable"]
+			},
+			shaft: {
+				modifier: 0.8,
+				"bonus ammo": 0,
 				traits: ["Twilit", "Flammable"]
 			}
 		},
@@ -317,6 +409,17 @@ info = {
 			extra: {
 				durability: 15,
 				traits: ["Ecological"]
+			},
+			bow: {
+				drawspeed: 1,
+				"range multipler": 1,
+				"bonus damage": 0,
+				traits: ["Ecological"]
+			},
+			shaft: {
+				modifier: 1,
+				"bonus ammo": 0,
+				traits: ["Ecological"]
 			}
 		},
 		{
@@ -335,6 +438,12 @@ info = {
 			},
 			extra: {
 				durability: 20,
+				traits: ["Cheap"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
 				traits: ["Cheap"]
 			}
 		},
@@ -355,6 +464,12 @@ info = {
 			extra: {
 				durability: 40,
 				traits: ["Crude"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
+				traits: ["Crude III"]
 			}
 		},
 		{
@@ -373,6 +488,12 @@ info = {
 			},
 			extra: {
 				durability: 50,
+				traits: ["Spiky"]
+			},
+			bow: {
+				drawspeed: 0.95,
+				"range multipler": 0.9,
+				"bonus damage": 0,
 				traits: ["Spiky"]
 			}
 		},
@@ -393,6 +514,17 @@ info = {
 			extra: {
 				durability: 65,
 				traits: ["Fractured"]
+			},
+			bow: {
+				drawspeed: 1.05,
+				"range multipler": 1.15,
+				"bonus damage": 0,
+				traits: ["Fractured"]
+			},
+			shaft: {
+				modifier: 0.9,
+				"bonus ammo": 5,
+				traits: ["Splitting"]
 			}
 		},
 		{
@@ -407,10 +539,16 @@ info = {
 			handle: {
 				durability: -100,
 				modifier: 0.9,
-				traits: ["Durite"]
+				traits: ["Duritae"]
 			},
 			extra: {
 				durability: 90,
+				traits: ["Duritae"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
 				traits: ["Duritae"]
 			}
 		},
@@ -431,6 +569,12 @@ info = {
 			extra: {
 				durability: 100,
 				traits: ["Aquadynamic"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
+				traits: ["Aquadynamic"]
 			}
 		},
 		{
@@ -450,6 +594,12 @@ info = {
 			extra: {
 				durability: 42,
 				traits: ["Enderference"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
+				traits: ["Enderference"]
 			}
 		},
 		{
@@ -459,16 +609,22 @@ info = {
 				"mining level": 1,
 				"mining speed": 0.51,
 				"attack damage": 0.05,
-				traits: ["Writeable"]
+				traits: ["Writable"]
 			},
 			handle: {
 				durability: 5,
 				modifier: 0.1,
-				traits: ["Writeable"]
+				traits: ["Writable"]
 			},
 			extra: {
 				durability: 15,
-				traits: ["Writeable"]
+				traits: ["Writable"]
+			},
+			bow: {
+				drawspeed: 0.67,
+				"range multipler": 0.4,
+				"bonus damage": -2,
+				traits: ["Writable II"]
 			}
 		},
 		{
@@ -487,6 +643,12 @@ info = {
 			},
 			extra: {
 				durability: 250,
+				traits: ["Squeaky"]
+			},
+			bow: {
+				drawspeed: 0.87,
+				"range multipler": 0.75,
+				"bonus damage": 0,
 				traits: ["Squeaky"]
 			}
 		},
@@ -507,6 +669,12 @@ info = {
 			extra: {
 				durability: 150,
 				traits: ["Autosmelt"]
+			},
+			bow: {
+				drawspeed: 1,
+				"range multipler": 1,
+				"bonus damage": 0,
+				traits: ["Autosmelt"]
 			}
 		},
 		{
@@ -526,6 +694,18 @@ info = {
 			extra: {
 				durability: 50,
 				traits: ["Magnetic"]
+			},
+			bow: {
+				drawspeed: 1,
+				"range multipler": 1,
+				"bonus damage": 0,
+				traits: ["Ecological"]
+			},
+			bow: {
+				drawspeed: 2,
+				"range multipler": 1.5,
+				"bonus damage": 7,
+				traits: ["Magnetic III"]
 			}
 		},
 		{
@@ -544,6 +724,12 @@ info = {
 			},
 			extra: {
 				durability: 170,
+				traits: ["Tasty"]
+			},
+			bow: {
+				drawspeed: 1.67,
+				"range multipler": 1.4,
+				"bonus damage": 7,
 				traits: ["Tasty"]
 			}
 		},
@@ -564,6 +750,12 @@ info = {
 			extra: {
 				durability: 125,
 				traits: ["Unnatural"]
+			},
+			bow: {
+				drawspeed: 2.5,
+				"range multipler": 2,
+				"bonus damage": 2,
+				traits: ["Unnatural"]
 			}
 		},
 		{
@@ -582,6 +774,12 @@ info = {
 			},
 			extra: {
 				durability: 350,
+				traits: ["Slimey"]
+			},
+			bow: {
+				drawspeed: 1.18,
+				"range multipler": 1.3,
+				"bonus damage": 0,
 				traits: ["Slimey"]
 			}
 		},
@@ -602,6 +800,12 @@ info = {
 			extra: {
 				durability: 200,
 				traits: ["Slimey"]
+			},
+			bow: {
+				drawspeed: 0.95,
+				"range multipler": 1,
+				"bonus damage": 0,
+				traits: ["Slimey"]
 			}
 		},
 		{
@@ -620,6 +824,12 @@ info = {
 			},
 			extra: {
 				durability: 150,
+				traits: ["Flammable"]
+			},
+			bow: {
+				drawspeed: 0.91,
+				"range multipler": 1.05,
+				"bonus damage": 1,
 				traits: ["Flammable"]
 			}
 		},
@@ -640,6 +850,12 @@ info = {
 			extra: {
 				durability: 75,
 				traits: ["Hellish"]
+			},
+			bow: {
+				drawspeed: 5,
+				"range multipler": 0.4,
+				"bonus damage": -1,
+				traits: ["Hellish"]
 			}
 		},
 		{
@@ -658,6 +874,12 @@ info = {
 			},
 			extra: {
 				durability: 300,
+				traits: ["Lightweight"]
+			},
+			bow: {
+				drawspeed: 1.33,
+				"range multipler": 1.3,
+				"bonus damage": 3,
 				traits: ["Lightweight"]
 			}
 		},
@@ -678,6 +900,12 @@ info = {
 			extra: {
 				durability: 450,
 				traits: ["Petramor"]
+			},
+			bow: {
+				drawspeed: 2.22,
+				"range multipler": 0.8,
+				"bonus damage": 1,
+				traits: ["Petramor"]
 			}
 		},
 		{
@@ -697,6 +925,12 @@ info = {
 			extra: {
 				durability: 50,
 				traits: ["Cold-Blooded"]
+			},
+			bow: {
+				drawspeed: 1.54,
+				"range multipler": 1.2,
+				"bonus damage": 4,
+				traits: ["Cold-Blooded"]
 			}
 		},
 		{
@@ -715,6 +949,12 @@ info = {
 			},
 			extra: {
 				durability: 15,
+				traits: ["Magically Modifiable", "Magically Brittle"]
+			},
+			bow: {
+				drawspeed: 1,
+				"range multipler": 1,
+				"bonus damage": 0,
 				traits: ["Magically Modifiable", "Magically Brittle"]
 			}
 		},
@@ -773,6 +1013,97 @@ info = {
 			extra: {
 				durability: 20,
 				traits: []
+			},
+			bow: {
+				drawspeed: 1.43,
+				"range multipler": 1.1,
+				"bonus damage": 4,
+				traits: []
+			}
+		},
+		{
+			name: "String",
+			bowstring: {
+				modifier: 1,
+				traits: []
+			}
+		},
+		{
+			name: "Slimevine",
+			bowstring: {
+				modifier: 1,
+				traits: []
+			}
+		},
+		{
+			name: "Vines",
+			bowstring: {
+				modifier: 1,
+				traits: []
+			}
+		},
+		{
+			name: "Blazerod",
+			shaft: {
+				modifier: 0.8,
+				"bonus ammo": 3,
+				traits: ["Hovering"]
+			}
+		},
+		{
+			name: "Reeds",
+			shaft: {
+				modifier: 1.5,
+				"bonus ammo": 20,
+				traits: ["Breakable"]
+			}
+		},
+		{
+			name: "Ice",
+			shaft: {
+				modifier: 0.95,
+				"bonus ammo": 0,
+				traits: ["Freezing"]
+			}
+		},
+		{
+			name: "Endrod",
+			shaft: {
+				modifier: 0.7,
+				"bonus ammo": 1,
+				traits: ["Endspeed"]
+			}
+		},
+		{
+			name: "Raven Feather",
+			fletchling: {
+				modifier: 1.15,
+				"accuracy": 0.95,
+				traits: ["Twilit", "Veiled"]
+			}
+		},
+		{
+			name: "Feather",
+			fletchling: {
+				modifier: 1,
+				"accuracy": 1,
+				traits: []
+			}
+		},
+		{
+			name: "Slimeleaf",
+			fletchling: {
+				modifier: 1.25,
+				"accuracy": 0.8,
+				traits: []
+			}
+		},
+		{
+			name: "Leaf",
+			fletchling: {
+				modifier: 1.5,
+				"accuracy": 0.5,
+				traits: []
 			}
 		}
 	],
@@ -799,6 +1130,54 @@ info = {
 		{ name: "Webbed", max: 3 },
 		{ name: "Fins", max: 1 },
 		{ name: "Embossment", max: 1 },
+	],
+	traits: [
+		"Alien",
+		"Aquadynamic",
+		"Aridiculous",
+		"Autosmelt",
+		"Baconlicious",
+		"Beheading",
+		"Breakable",
+		"Cheap",
+		"Cheapskate",
+		"Cold-Blooded",
+		"Crude",
+		"Crude II",
+		"Crumbling",
+		"Duritae",
+		"Ecological",
+		"Enderference",
+		"Endspeed",
+		"Flammable",
+		"Fractured",
+		"Freezing",
+		"Hellish",
+		"Hovering",
+		"Insatiable",
+		"Jagged",
+		"Lightweight",
+		"Magnetic",
+		"Magnetic II",
+		"Momentum",
+		"Petramor",
+		"Precipitate",
+		"Prickly",
+		"Sharp",
+		"Slimey",
+		"Spiky",
+		"Splintering",
+		"Splitting",
+		"Squeaky",
+		"Stalwart",
+		"Stonebound",
+		"Superheat",
+		"Tasty",
+		"Twilit",
+		"Unnatural",
+		"Writable",
+		"Writable II",
+		"Veiled",
 	]
 }
 
