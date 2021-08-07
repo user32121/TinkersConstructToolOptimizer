@@ -485,7 +485,7 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 	
 	let avgAttackDamage = avg(attackDamage);
-	let avgBonusDamage = avg(bonusDamage);
+	let avgBonusDamage = bonusDamage.length ? avg(bonusDamage) : 0;
 	let toolDamage = avgAttackDamage;
 	
 	//tool modifiers
