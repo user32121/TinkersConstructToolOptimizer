@@ -6,5 +6,4 @@ website at https://user32121.github.io/TinkersConstructToolOptimizer/
 
 ### TODO  
 -material-tool matrix (for when a user wants a certain material for a certain part)  
--list of modifier options  
 -bow calculations are all messed up  
