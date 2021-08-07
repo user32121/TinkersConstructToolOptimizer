@@ -8,6 +8,7 @@ function avg(ar)
 		sum += x;
 	return sum / ar.length;
 }
+const sleep = ms => new Promise(res => setTimeout(res, ms));
 
 //declare globals
 let selectedToolName, toolParts;
@@ -18,7 +19,9 @@ let curTool = [], bestTool, bestEmbossment, bestBaseStat = -1, bestBonusStat = -
 
 const verbose = false;
 
-function Optimize()
+let progressBar = document.getElementById("progress-bar");
+
+async function Optimize()
 {
 	//reset values
 	curTool = [];
@@ -26,6 +29,8 @@ function Optimize()
 	bestBaseStat = -1;
 	bestBonusStat = -1;
 	bestEmbossment = undefined;
+	progressBar.value = 0;
+	progressBar.hidden = false;
 	
 	//get display
 	let display = document.getElementById("result");
@@ -33,16 +38,16 @@ function Optimize()
 	while(display.firstChild)
 		display.removeChild(display.lastChild);
 	//error display in case function fails
-	display.appendChild(document.createTextNode("error"));
+	//display.appendChild(document.createTextNode("error"));
 	
 	//find tool
-	findOptimizedTool();
+	await findOptimizedTool();
 	
 	//display tool stats
 	if(verbose)
 		console.log(bestTool);
 	//build text
-	display.removeChild(display.lastChild);
+	//display.removeChild(display.lastChild);
 	if(bestBaseStat == -1)
 	{
 		display.appendChild(document.createTextNode("error"));
@@ -64,9 +69,10 @@ function Optimize()
 		else
 			display.appendChild(document.createTextNode(Number(bestBaseStat.toFixed(5))+" + "+Number(bestBonusStat.toFixed(5))));
 	}
+	progressBar.hidden = true;
 }
 
-function findOptimizedTool()
+async function findOptimizedTool()
 {
 	//get tool type
 	selectedToolName = document.querySelector("input[name='tool']:checked").value;
@@ -80,6 +86,7 @@ function findOptimizedTool()
 	materialList = Array.from(document.querySelectorAll("input[name='material']:checked")).map(input => input.value);
 	if(verbose)
 		console.log(materialList);
+	progressBar.max = materialList.length;
 	
 	//use embossment?
 	useEmbossment = !!document.querySelector("input#embossment:checked");
@@ -95,11 +102,11 @@ function findOptimizedTool()
 	//TODO
 	
 	//iterate through all combinations
-	selectToolPart(0);
+	await selectToolPart(0, true);
 }
 
-function selectToolPart(index)
-{
+async function selectToolPart(index, useProgressBar=false)
+{	
 	if(index == toolParts.length+ (useEmbossment?1:0))
 	{
 		//evaluate material
@@ -175,23 +182,33 @@ function selectToolPart(index)
 				if(valid)
 				{
 					embossment = { part, material };
-					selectToolPart(index+1);
+					await selectToolPart(index+1);
 				}
 			}
 		return;
 	}
 	
-	//select material
-	for(let material of materialList)
+	//select material	
+	if(useProgressBar)
+	{
+		progressBar.value = 0;
+		await sleep(1);
+	}
+	for(let i = 0; i < materialList.length; i++)
 	{
 		let valid = true;
 		for(let part of toolParts[index].types)
-			if(info.materials[material][part] == undefined)
+			if(info.materials[materialList[i]][part] == undefined)
 				valid = false;
 		if(valid)
 		{
-			curTool[index] = material;
-			selectToolPart(index+1);
+			curTool[index] = materialList[i];
+			await selectToolPart(index+1);
+		}
+		if(useProgressBar)
+		{
+			progressBar.value = i+1;
+			await sleep(1);
 		}
 	}
 }

@@ -3,6 +3,12 @@ console.assert(info, "info is not defined");
 console.assert(info.tools, "info.tools is not defined");
 console.assert(info.materials, "info.materials is not defined");
 
+{
+	//progress bar
+	let progressBar = document.getElementById("progress-bar");
+	progressBar.max = info.materials.length;
+}
+
 //tools
 let tools = document.getElementById("tools");
 for(let tool of info.tools)
