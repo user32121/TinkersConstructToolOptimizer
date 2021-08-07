@@ -410,15 +410,21 @@ const attackSpeedIgnoredTraits = ["Aquadynamic","Autosmelt","Baconlicious","Behe
 function getAttackSpeed(tool, baseStatOnly=false)
 {
 	let attackSpeed = 1;
+	let drawSpeed = [];
 	let traits = new Set();
 	
 	//get traits
 	for(let i = 0; i < toolParts.length; i++)
 		for(let part of toolParts[i].types)
+		{
+			if(part == "bow")
+				drawSpeed.push(info.materials[tool[i]].bow.drawspeed);
 			for(trait of info.materials[tool[i]][part].traits)
 				traits.add(trait);
+		}
 	
-	let toolSpeed = attackSpeed;
+	let avgDrawSpeed = (drawSpeed.length ? 1/avg(drawSpeed) : 1);
+	let toolSpeed = attackSpeed * avgDrawSpeed;
 	
 	//tool modifiers
 	if(info.tools[selectedToolName].modifiers["attack speed"])
@@ -458,6 +464,7 @@ const attackDamageIgnoredTraits = ["Aquadynamic","Autosmelt","Baconlicious","Beh
 function getAttackDamage(tool, baseStatOnly=false)
 {
 	let attackDamage = [];
+	let bonusDamage = [];
 	let traits = new Set();
 	
 	//base attack damage
@@ -466,7 +473,9 @@ function getAttackDamage(tool, baseStatOnly=false)
 		{
 			if(part == "head")
 				attackDamage.push(info.materials[tool[i]].head["attack damage"]);
-			else if(part == "extra"||part == "handle"||part == "shaft"||part == "fletchling"||part == "bow"||part == "bowstring") {}
+			else if(part == "bow")
+				bonusDamage.push(info.materials[tool[i]].bow["bonus damage"]);
+			else if(part == "extra"||part == "handle"||part == "shaft"||part == "fletchling"||part == "bowstring") {}
 			else
 				throw "Not Implemented Exception (part "+JSON.stringify(part)+")";
 			
@@ -476,6 +485,7 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 	
 	let avgAttackDamage = avg(attackDamage);
+	let avgBonusDamage = avg(bonusDamage);
 	let toolDamage = avgAttackDamage;
 	
 	//tool modifiers
@@ -489,9 +499,9 @@ function getAttackDamage(tool, baseStatOnly=false)
 				throw "Not Implemented Exception ("+JSON.stringify(op)+")";
 	
 	if(baseStatOnly)
-		return toolDamage;
+		return toolDamage + avgBonusDamage;
 
-	let finalDamage = toolDamage;
+	let finalDamage = toolDamage + avgBonusDamage;
 	
 	//traits
 	if(embossment != undefined)
@@ -506,11 +516,12 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 		else if(trait == "Aridiculous")
 		{
-			//TODO: Advanced
+			finalDamage += ((Math.pow(1.25, 3 * (0.5 + environment.temperature - environment.rainfall)) - 1.25) - environment.rainfall/2) * 2;
 		}
 		else if(trait == "Cold-Blooded")
 		{
-			//TODO: Advanced
+			if(environment["target full health"])
+				finalDamage += toolDamage/2;
 		}
 		else if(trait == "Crude")
 		{
@@ -526,7 +537,8 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 		else if(trait == "Hellish")
 		{
-			//TODO: Advanced
+			if(!environment["target fire immune"])
+				finalDamage += 4;
 		}
 		else if(trait == "Insatiable")
 		{
@@ -551,8 +563,8 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 		else if(trait == "Superheat")
 		{
-			//TODO: Advanced
-			//finalDamage += toolDamage * 0.35;
+			if(environment["target on immune"])
+				finalDamage += toolDamage * 0.35;
 		}
 		else if(trait == "Twilit")
 		{

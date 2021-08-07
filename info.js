@@ -470,7 +470,7 @@ info = {
 				drawspeed: 5,
 				"range multipler": 0.4,
 				"bonus damage": -1,
-				traits: ["Crude III"]
+				traits: ["Crude", "Crude II"]
 			}
 		},
 		{
@@ -697,16 +697,10 @@ info = {
 				traits: ["Magnetic"]
 			},
 			bow: {
-				drawspeed: 1,
-				"range multipler": 1,
-				"bonus damage": 0,
-				traits: ["Ecological"]
-			},
-			bow: {
 				drawspeed: 2,
 				"range multipler": 1.5,
 				"bonus damage": 7,
-				traits: ["Magnetic III"]
+				traits: ["Magnetic", "Magnetic II"]
 			}
 		},
 		{
