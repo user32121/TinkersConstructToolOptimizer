@@ -41,7 +41,14 @@ async function Optimize()
 	//display.appendChild(document.createTextNode("error"));
 	
 	//find tool
-	await findOptimizedTool();
+	try
+	{
+		await findOptimizedTool();
+	} catch(error) {
+		console.log(error);
+		display.appendChild(document.createTextNode("error"));
+		return;
+	}
 	
 	//display tool stats
 	if(verbose)
@@ -322,7 +329,6 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		for(let partTypes of embossment.part.types)
 			for(let trait of info.materials[embossment.material][partTypes].traits)
 				traits.add(trait);
-	console.log(traits);
 	for(trait of traits)
 	{
 		if(trait == "Alien")
