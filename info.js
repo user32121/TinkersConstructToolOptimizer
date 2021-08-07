@@ -88,7 +88,8 @@ info = {
 				durability: [["*", 2.5]],
 				"attack damage": [["*", 1.2]],
 				"attack speed": [["*", 0.8]],
-				"mining speed": [["*", 0.4]]
+				"mining speed": [["*", 0.4]],
+				"mining level": [["=", 1]]  //mining level takes trait from hammer head (use index)
 			}
 		},
 		{
@@ -1099,7 +1100,7 @@ info = {
 			}
 		},
 		{
-			name: "Leaf",
+			name: "LeaF",
 			fletchling: {
 				modifier: 1.5,
 				"accuracy": 0.5,

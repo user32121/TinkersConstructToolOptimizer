@@ -22,8 +22,13 @@ const verbose = false;
 
 let progressBar = document.getElementById("progress-bar");
 
+let mostRecentRequestID = 0;
+
 async function Optimize()
 {
+	//prevent multiple sessions
+	mostRecentRequestID++;
+		
 	//reset values
 	curTool = [];
 	bestTool = [];
@@ -44,7 +49,10 @@ async function Optimize()
 	//find tool
 	try
 	{
-		await findOptimizedTool();
+		requestID = await findOptimizedTool(mostRecentRequestID);
+		//check if newer request has been sent
+		if(requestID != mostRecentRequestID)
+			return;
 	} catch(error) {
 		console.log(error);
 		display.appendChild(document.createTextNode("error"));
@@ -80,7 +88,7 @@ async function Optimize()
 	progressBar.hidden = true;
 }
 
-async function findOptimizedTool()
+async function findOptimizedTool(requestID)
 {
 	//get tool type
 	selectedToolName = document.querySelector("input[name='tool']:checked").value;
@@ -110,10 +118,11 @@ async function findOptimizedTool()
 	//TODO
 	
 	//iterate through all combinations
-	await selectToolPart(0, true);
+	await selectToolPart(requestID, 0, true);
+	return requestID;
 }
 
-async function selectToolPart(index, useProgressBar=false)
+async function selectToolPart(requestID, index, useProgressBar=false)
 {	
 	if(index == toolParts.length+ (useEmbossment?1:0))
 	{
@@ -183,6 +192,9 @@ async function selectToolPart(index, useProgressBar=false)
 		for(let material of materialList)
 			for(let part of toolParts)
 			{
+				if(requestID != mostRecentRequestID)
+					return;
+				
 				let valid = true;
 				for(let partType of part.types)
 					if(info.materials[material][partType] == undefined)
@@ -190,7 +202,7 @@ async function selectToolPart(index, useProgressBar=false)
 				if(valid)
 				{
 					embossment = { part, material };
-					await selectToolPart(index+1);
+					await selectToolPart(requestID, index+1);
 				}
 			}
 		return;
@@ -204,6 +216,9 @@ async function selectToolPart(index, useProgressBar=false)
 	}
 	for(let i = 0; i < materialList.length; i++)
 	{
+		if(requestID != mostRecentRequestID)
+			return;
+		
 		let valid = true;
 		for(let part of toolParts[index].types)
 			if(info.materials[materialList[i]][part] == undefined)
@@ -211,7 +226,7 @@ async function selectToolPart(index, useProgressBar=false)
 		if(valid)
 		{
 			curTool[index] = materialList[i];
-			await selectToolPart(index+1);
+			await selectToolPart(requestID, index+1);
 		}
 		if(useProgressBar)
 		{
@@ -219,6 +234,7 @@ async function selectToolPart(index, useProgressBar=false)
 			await sleep(1);
 		}
 	}
+	return;
 }
 
 function getDurability(tool)
@@ -308,6 +324,7 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 	
 	let avgMiningSpeed = avg(miningSpeed);
+	let maxMiningLevel = Math.max(...miningLevel);
 	let toolSpeed = avgMiningSpeed;
 	
 	//tool modifiers
@@ -317,6 +334,12 @@ function getMiningSpeed(tool, baseStatOnly=false)
 				toolSpeed += v;
 			else if(op == "*")
 				toolSpeed *= v;
+			else
+				throw "Not Implemented Exception ("+JSON.stringify(op)+")";
+	if(info.tools[selectedToolName].modifiers["mining level"])
+		for(let [op, v] of info.tools[selectedToolName].modifiers["mining level"])
+			if(op == "=")
+				maxMiningLevel = info.materials[tool[v]].head["mining level"];
 			else
 				throw "Not Implemented Exception ("+JSON.stringify(op)+")";
 	
@@ -372,7 +395,8 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Unnatural")
 		{
-			//TODO: Advanced
+			if(environment["block level"] != -1 && maxMiningLevel > environment["block level"])
+				finalSpeed += maxMiningLevel - environment["block level"];
 		}
 		else if(miningSpeedIgnoredTraits.includes(trait)) {}  //trait has no effect on mining speed
 		else
@@ -559,3 +583,8 @@ function checkboxOnInput(caller)
 }
 for(let checkbox of document.querySelectorAll("input[oninput=\"checkboxOnInput(this)\"]"))
 	checkbox.oninput();
+function dropdownOnInput(caller)
+{
+	let property = caller.id.replaceAll("-"," ");
+	environment[property] = caller.value;
+}
