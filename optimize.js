@@ -568,7 +568,8 @@ function getAttackDamage(tool, baseStatOnly=false)
 		}
 		else if(trait == "Twilit")
 		{
-			//TODO: Advanced
+			if(!environment["in twilight"])
+				finalDamage += 2;
 		}
 		else if(attackDamageIgnoredTraits.includes(trait)) {}  //trait has no effect on mining speed
 		else
