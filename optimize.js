@@ -15,6 +15,7 @@ let selectedToolName, toolParts;
 let useEmbossment, embossment;
 let materialList
 let target;
+let environment = {};
 let curTool = [], bestTool, bestEmbossment, bestBaseStat = -1, bestBonusStat = -1;
 
 const verbose = false;
@@ -337,16 +338,16 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Aridiculous")
 		{
-			//TODO: Advanced
+			finalSpeed += toolSpeed * ((Math.pow(1.25, 3 * (0.5 + environment.temperature - environment.rainfall)) - 1.25) - environment.rainfall/2) / 10;
 		}
 		else if(trait == "Aquadynamic")
 		{
-			//TODO: Advanced
+			finalSpeed += toolSpeed * environment.rainfall/1.6;
 		}
 		else if(trait == "Crumbling")
 		{
-			//TODO: Advanced
-			//finalSpeed *= toolSpeed * 0.5;
+			if(environment["hand breakable"])
+				finalSpeed *= toolSpeed * 0.5;
 		}
 		else if(trait == "Lightweight")
 		{
@@ -354,11 +355,11 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Momentum")
 		{
-			finalSpeed += avgMiningSpeed * 0.4;
+			finalSpeed += toolSpeed * 0.4;
 		}
 		else if(trait == "Precipitate")
 		{
-			//TODO: Advanced
+			finalSpeed += toolSpeed * (1-environment.health);
 		}
 		else if(trait == "Stonebound")
 		{
@@ -366,7 +367,8 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Twilit")
 		{
-			//TODO: Advanced
+			if(environment["in twilight"])
+				finalSpeed += 2;
 		}
 		else if(trait == "Unnatural")
 		{
@@ -539,3 +541,21 @@ function getAttackDamage(tool, baseStatOnly=false)
 	
 	return finalDamage;
 }
+
+
+
+function sliderOnInput(caller)
+{
+	let property = caller.id.replaceAll("-"," ");
+	environment[property] = caller.value;
+	document.querySelector("label[for="+property+"]").textContent = property.charAt(0).toUpperCase()+property.slice(1)+": "+caller.value;
+}
+for(let slider of document.querySelectorAll("input[oninput=\"sliderOnInput(this)\"]"))
+	slider.oninput();
+function checkboxOnInput(caller)
+{
+	let property = caller.id.replaceAll("-"," ");
+	environment[property] = caller.checked;
+}
+for(let checkbox of document.querySelectorAll("input[oninput=\"checkboxOnInput(this)\"]"))
+	checkbox.oninput();

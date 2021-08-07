@@ -8,36 +8,63 @@
     <body>
         <div>
             <h1>Tinkers Construct Tool Optimizer</h1>
-            <p>Tool</p>
-            <span id="tools">
-            </span><br><br>
-            
-            <p>Materials<input type="checkbox" id="all-materials" onclick="allMaterialsCheckOnClick(this)" checked></input></p>
-			<span id="materials">
-            </span><br><br>
 			
-            <p><strike>Modifiers</strike></p>
-			<span id="modifiers">
-				<input type="checkbox" id="embossment" checked></input>
-				<label for="embossment">Embossment</label>
-            </span><br><br>
-			
-            <label for="optimization-target">Optimize: </label>
-			<select name="optimization-target" id="optimization-target">
-				<option value="durability">Durability</option>
-				<option value="mining-speed">Mining Speed</option>
-				<option value="attack-speed">Attack Speed</option>
-				<option value="attack-damage">Attack Damage</option>
-				<option value="dps">DPS</option>
-			</select>
+			<div>
+				Tool<br>
+				<span id="tools"></span>
+			</div>
+			<br><br>
             
-			<p><strike>Advanced v</strike></p>
-            <button onclick="Optimize()">Optimize</button>
-			<progress id="progress-bar" value="0" max="1" hidden></progress>
-			<p id="result"></p>
+			<div>
+				Materials<input type="checkbox" id="all-materials" onclick="allMaterialsCheckOnClick(this)" checked></input><br>
+				<span id="materials"></span>
+			</div>
+			<br><br>
+			
+			<div>
+				<label for="optimization-target">Optimize: </label>
+				<select name="optimization-target" id="optimization-target">
+					<option value="durability">Durability</option>
+					<option value="mining-speed">Mining Speed</option>
+					<option value="attack-speed">Attack Speed</option>
+					<option value="attack-damage">Attack Damage</option>
+					<option value="dps">DPS</option>
+				</select>
+			</div>
+			<br><br>
+            
+			<div>
+				<button class="collapsible">Advanced</button>
+				<div class="collapsible-content">
+					<input type="checkbox" id="embossment" checked></input>
+					<label for="embossment">Embossment</label>
+					<br>
+					<input type="checkbox" id="hand-breakable" oninput="checkboxOnInput(this)"></input>
+					<label for="hand-breakable">Mineable by hand</label>
+					<br>
+					<input type="checkbox" id="in-twilight" oninput="checkboxOnInput(this)"></input>
+					<label for="in-twilight">In Twilight Forest</label>
+					<br>
+					<input type="range" id="temperature" min="-1" max="2" step="0.1" value="0.8" oninput="sliderOnInput(this)"></input>
+					<label for="temperature">Temperature: 0.8</label>
+					<br>
+					<input type="range" id="rainfall" min="0" max="2" step="1" value="0" oninput="sliderOnInput(this)"></input>
+					<label for="rainfall">Rainfall: 0</label>
+					<br>
+					<input type="range" id="health" min="0" max="1" step="0.1" value="1" oninput="sliderOnInput(this)"></input>
+					<label for="health">Health: 1</label>
+				</div>
+			</div>
+			<br><br>
+			
+			<div>
+				<button onclick="Optimize()">Optimize</button>
+				<progress id="progress-bar" value="0" max="1" hidden></progress>
+				<p id="result"></p>
+			</div>
         </div>
         <script src="info.js"></script>
-        <script async src="buildHTML.js"></script>
+        <script src="buildHTML.js"></script>
         <script src="optimize.js"></script>
     </body>
 </html>

@@ -83,10 +83,6 @@ for(material of info.materials)
 	materials.appendChild(wrapper);
 }
 
- 
-//modifiers
-
-
 
 //material master checkbox
 function materialsCheckOnClick()
@@ -117,3 +113,19 @@ function allMaterialsCheckOnClick(allCheckBox)
 	for(let checkBox of checkboxes.values())
 		checkBox.checked = allCheckBox.checked;
 }
+
+
+//collapsible
+function collapsibleOnClick(caller)
+{
+	//collapses next item
+	let content = caller.nextElementSibling;
+	if(caller.classList.toggle("active"))
+		content.style.maxHeight = content.scrollHeight+"px";
+	else
+		content.style.maxHeight = null;
+}
+
+let collapsibles = document.getElementsByClassName("collapsible");
+for(let collapsible of collapsibles)
+	collapsible.setAttribute("onclick", "collapsibleOnClick(this)");

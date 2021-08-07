@@ -3,3 +3,19 @@ span.wrapper {
   display: inline-block;
   margin-right: 10px;
 }
+
+/* collapsible */
+.collapsible:after {
+	content: '\002B';
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+.collapsible.active:after {
+	content: '\2212';
+}
+.collapsible-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
