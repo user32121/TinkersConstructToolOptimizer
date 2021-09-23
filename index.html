@@ -60,8 +60,8 @@
 					<input type="range" id="rainfall" min="0" max="2" step="1" value="0" oninput="sliderOnInput(this)"></input>
 					<label for="rainfall">Rainfall: 0</label>
 					<br>
-					<input type="range" id="health" min="0" max="1" step="0.1" value="1" oninput="sliderOnInput(this)"></input>
-					<label for="health">Health: 1</label>
+					<input type="range" id="player-health" min="0" max="1" step="0.1" value="1" oninput="sliderOnInput(this)"></input>
+					<label for="player-health">Player Health: 1</label>
 					<br>
 					<select id="block-level" oninput="dropdownOnInput(this)">
 						<option value="-1">N/A</option>
@@ -71,13 +71,13 @@
 						<option value="4">Obsidian</option>
 						<option value="5">Cobalt</option>
 					</select>
-					<label for="health">Block Level</label>
+					<label>Block Level</label>
 				</div>
 			</div>
 			<br><br>
 			
 			<div>
-				<button onclick="Optimize()">Optimize</button>
+				<button onclick="startOptimize()">Optimize</button>
 				<progress id="progress-bar" value="0" max="1" hidden></progress>
 				<p id="result"></p>
 			</div>

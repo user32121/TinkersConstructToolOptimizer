@@ -28,7 +28,7 @@ async function Optimize()
 {
 	//prevent multiple sessions
 	mostRecentRequestID++;
-		
+	
 	//reset values
 	curTool = [];
 	bestTool = [];
@@ -123,7 +123,7 @@ async function findOptimizedTool(requestID)
 }
 
 async function selectToolPart(requestID, index, useProgressBar=false)
-{	
+{
 	if(index == toolParts.length+ (useEmbossment?1:0))
 	{
 		//evaluate material
@@ -382,7 +382,7 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Precipitate")
 		{
-			finalSpeed += toolSpeed * (1-environment.health);
+			finalSpeed += toolSpeed * (1-environment.["player health"]);
 		}
 		else if(trait == "Stonebound")
 		{
