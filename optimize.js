@@ -370,7 +370,7 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		else if(trait == "Crumbling")
 		{
 			if(environment["hand breakable"])
-				finalSpeed *= toolSpeed * 0.5;
+				finalSpeed += toolSpeed * 0.5;
 		}
 		else if(trait == "Lightweight")
 		{
