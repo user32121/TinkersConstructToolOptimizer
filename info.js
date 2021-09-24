@@ -299,7 +299,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.67,
-				"range multipler": 2,
+				"range multiplier": 2,
 				"bonus damage": 0,
 				traits: ["Twilit", "Precipitate"]
 			},
@@ -329,7 +329,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.83,
-				"range multipler": 1.5,
+				"range multiplier": 1.5,
 				"bonus damage": 2,
 				traits: ["Twilit", "Synergy"]
 			},
@@ -364,7 +364,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1,
-				"range multipler": 0.9,
+				"range multiplier": 0.9,
 				"bonus damage": 4,
 				traits: ["Twilit", "Flammable"]
 			},
@@ -413,7 +413,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1,
-				"range multipler": 1,
+				"range multiplier": 1,
 				"bonus damage": 0,
 				traits: ["Ecological"]
 			},
@@ -443,7 +443,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Cheap"]
 			}
@@ -468,7 +468,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Crude", "Crude II"]
 			}
@@ -493,7 +493,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.95,
-				"range multipler": 0.9,
+				"range multiplier": 0.9,
 				"bonus damage": 0,
 				traits: ["Spiky"]
 			}
@@ -518,7 +518,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.05,
-				"range multipler": 1.15,
+				"range multiplier": 1.15,
 				"bonus damage": 0,
 				traits: ["Fractured"]
 			},
@@ -548,7 +548,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Duritae"]
 			}
@@ -573,7 +573,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Aquadynamic"]
 			}
@@ -598,7 +598,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Enderference"]
 			}
@@ -623,7 +623,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.67,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -2,
 				traits: ["Writable II"]
 			}
@@ -648,7 +648,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.87,
-				"range multipler": 0.75,
+				"range multiplier": 0.75,
 				"bonus damage": 0,
 				traits: ["Squeaky"]
 			}
@@ -673,7 +673,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1,
-				"range multipler": 1,
+				"range multiplier": 1,
 				"bonus damage": 0,
 				traits: ["Autosmelt"]
 			}
@@ -698,7 +698,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 2,
-				"range multipler": 1.5,
+				"range multiplier": 1.5,
 				"bonus damage": 7,
 				traits: ["Magnetic", "Magnetic II"]
 			}
@@ -723,7 +723,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.67,
-				"range multipler": 1.4,
+				"range multiplier": 1.4,
 				"bonus damage": 7,
 				traits: ["Tasty"]
 			}
@@ -748,7 +748,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 2.5,
-				"range multipler": 2,
+				"range multiplier": 2,
 				"bonus damage": 2,
 				traits: ["Unnatural"]
 			}
@@ -773,7 +773,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.18,
-				"range multipler": 1.3,
+				"range multiplier": 1.3,
 				"bonus damage": 0,
 				traits: ["Slimey"]
 			}
@@ -798,7 +798,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.95,
-				"range multipler": 1,
+				"range multiplier": 1,
 				"bonus damage": 0,
 				traits: ["Slimey"]
 			}
@@ -823,7 +823,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 0.91,
-				"range multipler": 1.05,
+				"range multiplier": 1.05,
 				"bonus damage": 1,
 				traits: ["Flammable"]
 			}
@@ -848,7 +848,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 5,
-				"range multipler": 0.4,
+				"range multiplier": 0.4,
 				"bonus damage": -1,
 				traits: ["Hellish"]
 			}
@@ -873,7 +873,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.33,
-				"range multipler": 1.3,
+				"range multiplier": 1.3,
 				"bonus damage": 3,
 				traits: ["Lightweight"]
 			}
@@ -898,7 +898,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 2.22,
-				"range multipler": 0.8,
+				"range multiplier": 0.8,
 				"bonus damage": 1,
 				traits: ["Petramor"]
 			}
@@ -923,7 +923,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.54,
-				"range multipler": 1.2,
+				"range multiplier": 1.2,
 				"bonus damage": 4,
 				traits: ["Cold-Blooded"]
 			}
@@ -948,7 +948,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1,
-				"range multipler": 1,
+				"range multiplier": 1,
 				"bonus damage": 0,
 				traits: ["Magically Modifiable", "Magically Brittle"]
 			}
@@ -1011,7 +1011,7 @@ info = {
 			},
 			bow: {
 				drawspeed: 1.43,
-				"range multipler": 1.1,
+				"range multiplier": 1.1,
 				"bonus damage": 4,
 				traits: []
 			}

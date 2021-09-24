@@ -382,7 +382,7 @@ function getMiningSpeed(tool, baseStatOnly=false)
 		}
 		else if(trait == "Precipitate")
 		{
-			finalSpeed += toolSpeed * (1-environment.["player health"]);
+			finalSpeed += toolSpeed * (1-environment["player health"]);
 		}
 		else if(trait == "Stonebound")
 		{
@@ -585,7 +585,7 @@ function sliderOnInput(caller)
 {
 	let property = caller.id.replaceAll("-"," ");
 	environment[property] = caller.value;
-	document.querySelector("label[for="+property+"]").textContent = property.charAt(0).toUpperCase()+property.slice(1)+": "+caller.value;
+	document.querySelector("label[for="+caller.id+"]").textContent = property.charAt(0).toUpperCase()+property.slice(1)+": "+caller.value;
 }
 for(let slider of document.querySelectorAll("input[oninput=\"sliderOnInput(this)\"]"))
 	slider.oninput();
